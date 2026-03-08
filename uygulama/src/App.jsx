@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route index path="/" element={<Product />} />
+          <Route path="/" element={<Product />} />
         </Routes>
       </Router>
     </div>

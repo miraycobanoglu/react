@@ -11,11 +11,14 @@ export const dataSlice = createSlice({
     createDataFunc: (state, action) => {
       state.value = [...state.value, action.payload]
     },
+    deleteDataFunc: (state, action) => {
+      state.value = state.value.filter(dt => dt.id !== action.payload)
+    },
   },
 })
 
 
 // Action creators are generated for each case reducer function
-export const { createDataFunc } = dataSlice.actions
+export const { createDataFunc , deleteDataFunc} = dataSlice.actions
 
 export default dataSlice.reducer

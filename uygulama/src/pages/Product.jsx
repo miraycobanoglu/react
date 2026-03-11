@@ -26,7 +26,8 @@ const Product = () => {
      console.log(data, "data");
 
   const buttonFunc = () => {
-    dispatch(createDataFunc(productInfo));
+    const newProduct = { ...productInfo, id: data.length + 1 };
+    dispatch(createDataFunc(newProduct));
     dispatch(modalFunc());
   };
   const contentModal = (
@@ -39,7 +40,7 @@ const Product = () => {
   );
   return (
     <div>
-      <div>
+      <div className='flex items-center flex-wrap mt-4'>
         {
           data?.map((dt,i) => ( 
           <ProductCard key={i} dt={dt} /> 

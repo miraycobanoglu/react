@@ -2,6 +2,7 @@ import React from 'react'
 import { MdPostAdd } from 'react-icons/md'
 import { modalFunc } from '../redux/modalSlice';
 import { useDispatch } from 'react-redux';
+import { sortingDataFunc } from '../redux/dataSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Header = () => {
       <div className="text-3xl"> REACT UYGULAMA </div>
       <div className="flex items-center gap-4">
         <div>
-            <select className="cursor-pointer" name="" id="">
+            <select onChange={e => dispatch(sortingDataFunc(e.target.value))} className="cursor-pointer" name="" id="">
                 <option value="asc">artan</option>
                 <option value="desc">azalan</option>
             </select>
